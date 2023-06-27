@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main()
+{
+	int arr[31] = { 0 };
+	arr[0] = 1;
+
+	int temp;
+
+	for (int i = 0; i < 28; i++)
+	{
+		scanf("%d", &temp);
+		arr[temp] = temp;
+	}
+
+	for (int i = 0; i < 31; i++)
+	{
+		if (arr[i] == 0)
+			printf("%d\n", i);
+	}
+
+	return 0;
+}
