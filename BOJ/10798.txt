@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	char lett[5][15] = { '\0' };
+	char result[75] = "\0";
+
+	for(int i = 0; i < 5; i++)
+		scanf("%s", lett[i]);
+
+
+	for(int j = 0 ; j < 15 ; j++ )
+	{ 
+		for (int i = 0; i < 5; i++)
+		{
+			if (lett[i][j] != '\0')
+				printf("%c", lett[i][j]);
+		}
+	}
+
+	printf("%s", result);
+
+	return 0;
+
+}

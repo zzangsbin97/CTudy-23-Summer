@@ -130,8 +130,15 @@
     <ClCompile Include="BOJ.c" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="10798.txt" />
     <Text Include="10811.txt" />
+    <Text Include="11720미완.txt" />
+    <Text Include="1546.txt" />
+    <Text Include="2563.txt" />
+    <Text Include="2566.txt" />
+    <Text Include="2738.txt" />
     <Text Include="5597.txt" />
+    <Text Include="5622.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

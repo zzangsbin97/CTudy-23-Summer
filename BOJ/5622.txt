@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+int second(int n)
+{
+	int sec;
+
+	if (n <= 67)
+		sec = 3;
+	else if (n <= 70)
+		sec = 4;
+	else if (n <= 73)
+		sec = 5;
+	else if (n <= 76)
+		sec = 6;
+	else if (n <= 79)
+		sec = 7;
+	else if (n <= 83)
+		sec = 8;
+	else if (n <= 86)
+		sec = 9;
+	else if (n <= 90)
+		sec = 10;
+
+	return sec;
+}
+int main()
+{
+	char word[15] = { '\0' };
+	scanf("%s", word);
+
+	int totalTime = 0;
+
+	for (int i = 0; word[i] != '\0'; i++)
+		totalTime += second(word[i]);
+
+	printf("%d", totalTime);
+
+	return 0;
+}

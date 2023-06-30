@@ -1,40 +1,34 @@
 ﻿#include <stdio.h>
-#include <stdlib.h>
-void swap(int start, int end, int* index) // 바꾸는 함수
-{
-	for (; start <= (start + end) / 2; start++)
-	{
-		int temp = *(index + start - 1);
-		*(index + start - 1) = *(index + end - 1);
-		*(index + end - 1) = temp;
-		end--;
-
-	}
-}
 int main()
 {
-	int N; // 숫자 갯수
-	int count; // 시행 횟수
-	int start, end;
+	int paper[100][100] = { 0 };
 
+	int N;
 	scanf("%d", &N);
-	scanf("%d", &count);
-	int* basket = (int*)malloc(sizeof(int) * N);
 
-	for (int i = 1; i <= N ; i++)
-		basket[i - 1] = i; 
-
-	for (int i = 0; i < count; i++)
-	{
-		scanf("%d", &start);
-		scanf("%d", &end);
-		swap(start, end, basket);
-	}
+	int x, y;
+	int area = 0;
 
 	for (int i = 0; i < N; i++)
-		printf("%d ", basket[i]);
+	{
+		scanf("%d", &x);
+		scanf("%d", &y);
 
-	free(basket);
+		for (int xx = x ; xx < x + 10; xx++)
+		{
+			for (int yy = y; yy < y + 10; yy++)
+			{
+				if (paper[xx][yy] == 0)
+				{
+					paper[xx][yy] = 1;
+					area++;
+				}
+			}
+		}
+
+	}
+
+	printf("%d", area);
 
 	return 0;
 

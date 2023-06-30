@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+	int N, M;
+
+	scanf("%d", &N);
+	scanf("%d", &M);
+
+	int** arr1 = (int**)malloc(sizeof(int*) * N);
+	for (int i = 0; i < N; i++)
+		arr1[i] = (int*)malloc(sizeof(int) * M); // 첫번째 배열 선언
+
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < M; j++)
+			scanf("%d", &arr1[i][j]);
+	}
+	
+	int** arr2 = (int**)malloc(sizeof(int*) * N);
+	for (int i = 0; i < N; i++)
+		arr2[i] = (int*)malloc(sizeof(int) * M); // 두번째 배열 선언
+
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < M; j++)
+			scanf("%d", &arr2[i][j]);
+	}
+
+	int** result = (int**)malloc(sizeof(int*) * N);
+	for (int i = 0; i < N; i++)
+		result[i] = (int*)malloc(sizeof(int) * M); // 결과 배열 선언
+
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < M; j++)
+			result[i][j] = arr1[i][j] + arr2[i][j];
+	}
+
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < M; j++)
+			printf("%d ", result[i][j]);
+		printf("\n");
+	}
+
+	for (int i = 0; i < N; i++)
+		free(arr1[i]);
+	free(arr1);
+
+	for (int i = 0; i < N; i++)
+		free(arr2[i]);
+	free(arr2);
+
+	for (int i = 0; i < N; i++)
+		free(result[i]);
+	free(result);
+
+	return 0;
+
+
+
+}

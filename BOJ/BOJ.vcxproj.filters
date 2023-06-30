@@ -25,5 +25,12 @@
   <ItemGroup>
     <Text Include="5597.txt" />
     <Text Include="10811.txt" />
+    <Text Include="1546.txt" />
+    <Text Include="11720미완.txt" />
+    <Text Include="5622.txt" />
+    <Text Include="2738.txt" />
+    <Text Include="2566.txt" />
+    <Text Include="10798.txt" />
+    <Text Include="2563.txt" />
   </ItemGroup>
 </Project>

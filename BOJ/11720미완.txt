@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+	int N;
+	//	char temp[5] = { '\0' };
+
+	//	fgets(temp, 5, stdin);
+	//	N = atoi(temp);
+
+	scanf("%d", &N);
+
+	char* numbers = (char*)malloc(sizeof(char) * (N + 1));
+	scanf("%s", numbers);
+
+	int sum = 0;
+
+	for (int i = 0; i < N; i++)
+	{
+		
+//		printf("%c ", numbers[i]);
+//		printf("%d ", atoi(numbers[i]));
+//		printf("%d ", atoi(numbers + i));
+
+		sum += numbers[i] - 48;
+//		printf("%d\n", i);
+	}
+
+
+	printf("%d", sum);
+
+	free(numbers);
+
+	return 0;
+}

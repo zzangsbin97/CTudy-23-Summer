@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+double avg(int N, double M, double* scores)
+{
+	double avg = 0;
+	for (int i = 0; i < N; i++)
+		avg += (*(scores + i)) / M * 100;
+
+	avg /= N; // 여기서 N은 int형인데 왜 double형으로 반환됨...?
+
+	return avg;
+}
+
+int main()
+{
+	int N;
+	double M = 0;
+	scanf("%d", &N);
+
+	double* scores = (double*)malloc(sizeof(double) * N);
+
+	for (int i = 0; i < N; i++)
+	{
+		scanf("%lf", &scores[i]); // 점수 한칸 넣기
+
+		if (scores[i] > M) // 입력한 점수가 기존의 최댓값보다 크면
+			M = scores[i]; // 최댓값을 입력한 점수로 바꿔주기
+	}
+
+	printf("%lf", avg(N, M, scores));
+
+	free(scores);
+
+	return 0;
+
+}
