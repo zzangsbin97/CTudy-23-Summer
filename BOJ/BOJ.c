@@ -1,35 +1,16 @@
 ﻿#include <stdio.h>
 int main()
 {
-	int paper[100][100] = { 0 };
+	long long num;
+	long long sum = 0;
 
-	int N;
-	scanf("%d", &N);
-
-	int x, y;
-	int area = 0;
-
-	for (int i = 0; i < N; i++)
+	for (int i = 0; i < 3; i++)
 	{
-		scanf("%d", &x);
-		scanf("%d", &y);
-
-		for (int xx = x ; xx < x + 10; xx++)
-		{
-			for (int yy = y; yy < y + 10; yy++)
-			{
-				if (paper[xx][yy] == 0)
-				{
-					paper[xx][yy] = 1;
-					area++;
-				}
-			}
-		}
-
+		scanf("%ld", &num);
+		sum += num;
 	}
 
-	printf("%d", area);
+	printf("%ld", sum);
 
 	return 0;
-
 }

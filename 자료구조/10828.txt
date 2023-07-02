@@ -1,0 +1,105 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX_SIZE 10000 // 맨 처음에 문제 안읽고 여기 100으로 했다가 틀림ㅠ InsufficientSpace 오류....
+#define DataType int
+typedef struct _ArrayStack
+{
+	int top;
+	DataType stack[MAX_SIZE];
+
+} ArrayStack; // _ArrayStack 구조체 변수 ArrayStack 선언
+
+void reset_Stack(ArrayStack* AS)
+{
+	AS->top = -1;
+} // 스택의 top 초기 위치를 -1로 초기화 근데 사실 이건 main함수에 넣어도 됨
+
+void push_Stack(ArrayStack* AS, int N)
+{
+	AS->stack[++AS->top] = N;
+} // push
+
+void pop_Stack(ArrayStack* AS)
+{
+	printf("%d\n", AS->stack[AS->top]);
+	AS->stack[AS->top--];
+} // pop
+
+/*
+int size_Stack(ArrayStack* AS)
+{
+	int size = sizeof(AS->stack) / sizeof(DataType);
+
+	return size;
+
+} // 스택 사이즈 구하기
+*/
+
+void top_Stack(ArrayStack* AS)
+{
+	printf("%d\n", AS->stack[AS->top]);
+}
+
+int main()
+{
+	ArrayStack arr;
+	reset_Stack(&arr);
+
+	int count;
+	scanf("%d", &count);
+
+	char answer[10] = { '\0' };
+
+	int stacksize = 0;
+
+	int num;
+
+	for (int i = 0; i < count; i++)
+	{
+		scanf("%s", answer);
+
+		if (strstr(answer, "push") != NULL)
+		{
+			scanf("%d", &num);
+			push_Stack(&arr, num);
+			stacksize++;
+		}
+
+		if (strcmp(answer, "pop") == 0)
+		{
+			if (stacksize == 0)
+				printf("-1\n");
+			else
+			{
+				pop_Stack(&arr);
+				stacksize--;
+				if (stacksize < 0)
+					stacksize = 0;
+			}
+		}
+
+		if (strcmp(answer, "size") == 0)
+		{
+			printf("%d\n", stacksize);
+		}
+
+		if (strcmp(answer, "empty") == 0)
+		{
+			if (stacksize == 0)
+				printf("1\n");
+			else
+				printf("0\n");
+		}
+
+		if (strcmp(answer, "top") == 0)
+		{
+			if (stacksize == 0)
+				printf("-1\n");
+			else
+				top_Stack(&arr);
+		}
+	}
+
+	return 0;
+}
