@@ -130,6 +130,7 @@
     <ClCompile Include="console.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="10773.txt" />
     <Text Include="10828.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
